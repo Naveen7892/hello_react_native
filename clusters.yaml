@@ -1,0 +1,7 @@
+- alias: hasura
+  config:
+    configmap: controller-conf
+    namespace: byproduct48-hasura
+  data: null
+  kubeContext: byproduct48
+  name: byproduct48
