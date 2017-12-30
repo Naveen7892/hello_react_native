@@ -1,0 +1,97 @@
+--------------------1-------------------------
+Application <project name> has not been registered.
+
+sol: Kill all node processes and restart.
+(in my case, i was running another test project already)
+
+--------------------2--------------------------
+>npm install native-base --save
+Error: EPERM: operation not permitted, rename 'D:\Testing\react_native_basic\node_modules\.staging\hoist-non-react-statics-5fa2fac6' -> 'D:\Testing\react_native_basic\node_modules\hoist-non-react-statics'
+    at Error (native)
+ { [Error: EPERM: operation not permitted, rename 'D:\Testing\react_native_basic\node_modules\.staging\hoist-non-react-statics-5fa2fac6' -> 'D:\Testing\react_native_basic\node_modules\hoist-non-react-statics']
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'rename',
+  path: 'D:\\Testing\\react_native_basic\\node_modules\\.staging\\hoist-non-react-statics-5fa2fac6',
+  dest: 'D:\\Testing\\react_native_basic\\node_modules\\hoist-non-react-statics',
+  parent: 'react_native_basic' }
+
+Please try running this command again as root/Administrator.
+
+sol: Run command with admin privileges.
+
+--------------------3--------------------------
+(In mobile app)
+Could not connect to developer server
+
+sol: (Re)start server again.
+>> react-native run-android
+
+--------------------4--------------------------
+(In mobile app)
+Invariant violation: Element type invalid: expected string or class/function but got: Object. You likely forgot to export your component from the file it's defined in.
+
+Check the render method of 'App'.
+
+sol: Define and export component
+--------------------5--------------------------
+(In node console)
+HomePage/index.js: Module does not exist in the module map
+Unable to resolve module react-navigation
+
+sol: (re)install react-navigation
+>> npm uninstall --save react-navigation
+>> npm install --save react-navigation@v1.0.0-beta.21
+--------------------6--------------------------
+Can't find variable: Component
+
+sol:
+check if any class that extends Component is not imported.
+eg 1:
+import React from 'react';
+class ... extends React.Component { ... }
+
+eg 2:
+import React, { Component } from 'react';
+class ... extends Component { ... }
+
+--------------------7--------------------------
+Cannot add a child that doesn't have a YogaNode to a parent without a measure function (trying to add a 'ReactRawTextShadowNode' to 'LayoutShadowNode')
+
+sol:
+Raw string is not supported. Use <Text> Your String </Text>
+
+--------------------8--------------------------
+Unsupported top level event type toptouchstart dispatched
+
+sol: Define and export component
+--------------------9--------------------------
+The Component for route 'Home' must be a React component
+
+sol: Define and export component
+--------------------10--------------------------
+Adjacent JSX elements must be wrapped in an enclosing tag
+
+sol: Wrap the elements within Container, view, or other wrapper elements.
+--------------------11--------------------------
+Failed prop type: Invalid prop 'name' of value 'user' supplied to 'icon'\\
+
+sol: check with icon names (in mobile warning list) eg: arrow-back, person, menu, home, search, notifications, mail
+--------------------12--------------------------
+Error while updating property 'padding' in shadow node of type: RCTText
+
+Sol: Use itemStyle
+--------------------13--------------------------
+Warning: Failed prop type: invalid prop 'name' of value '' supplied to icon
+
+Sol: provide correct icon name. Import Icon properly
+--------------------14--------------------------
+Error while updating property 'alignitems' in shadow node of type: RCTText
+
+sol:
+
+--------------------15--------------------------
+To remove underline under listitem
+
+--------------------16--------------------------
+Error whilte updating propert 'height' in shadow node of type: RCTView

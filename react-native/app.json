@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "blog",
+    "name": "react-native",
     "description": "An empty new project",
     "slug": "blog",
     "privacy": "public",
-    "sdkVersion": "22.0.0",
+    "sdkVersion": "23.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
