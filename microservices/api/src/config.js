@@ -1,6 +1,7 @@
 let projectConfig = {
     url: {
-        data: 'http://data.hasura/v1/query',
+        //data: 'http://data.hasura/v1/query',
+		data: "https://data.byproduct48.hasura-app.io/v1/query"
     }
 }
 
