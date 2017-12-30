@@ -4,7 +4,7 @@ var config = require('./config');
 var request = require('request');
 
 router.route("/").get(function (req, res) {
-  res.send("Hello world from app")
+  res.send("Hello from Naveen Kumar!")
 })
 
 router.route("/get_articles").get(function (req, res) {
@@ -21,6 +21,39 @@ router.route("/get_articles").get(function (req, res) {
       'type': 'select',
       'args': {
         'table': 'article',
+        'columns': [
+          '*'
+        ]
+      }
+    })
+  }
+  request(selectOptions, function(error, response, body) {
+    if (error) {
+        console.log('Error from select request: ');
+        console.log(error)
+        res.status(500).json({
+          'error': error,
+          'message': 'Select request failed'
+        });
+    }
+    res.json(JSON.parse(body))
+  })
+})
+
+router.route("/get_authors").get(function (req, res) {
+  //Fetch all rows from table - articles
+  var selectOptions = {
+    url: config.projectConfig.url.data,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Hasura-User-Id': 0,
+      'X-Hasura-Role': 'anonymous'
+    },
+    body: JSON.stringify({
+      'type': 'select',
+      'args': {
+        'table': 'author',
         'columns': [
           '*'
         ]
