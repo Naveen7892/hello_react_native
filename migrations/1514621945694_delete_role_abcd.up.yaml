@@ -1,0 +1,3 @@
+- args:
+    sql: DELETE FROM hauth_catalog.roles WHERE name='abcd'
+  type: run_sql
